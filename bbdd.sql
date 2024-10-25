@@ -19,5 +19,5 @@ CREATE TABLE llibres    (
     stock INT DEFAULT 0,
     biblioteca_id INT,
     FOREIGN KEY (biblioteca_id) REFERENCES biblioteques(id) ON DELETE SET NULL
-
-)
+    
+);
