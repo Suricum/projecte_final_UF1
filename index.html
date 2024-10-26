@@ -66,8 +66,18 @@
 
                 </form>
 
-                <form action="assignaLlibre.php">
+                <form action="assignaLlibreABiblioteca.php">
+
                     <h3>Assiga llibre a una biblioteca</h3>
+                    <label for="nom">Nom del llibre: </label>
+                    <input type="text" id="nom" required>
+                    <label for="numISBN">ISBN del llibre: </label>
+                    <input type="text" id="numISBN" required>
+                    <label for="biblioteca">A quina biblioteca vols assignar: </label>
+                    <input type="text" id="biblioteca" required>
+
+                    <button type="submit" value="assigna">Assignar</button>
+
                 </form>
 
                 <div id="llistaLlibr">
