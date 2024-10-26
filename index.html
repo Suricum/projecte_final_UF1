@@ -28,11 +28,23 @@
             <section id="biblioteques">
 
                 <h2>Gestio de biblioteques</h2>
-                <form action="">
+                <form action="index.php" method="post">
 
+                    <label for="nomBibl">Nom Biblioteca: </label>
+                    <input type="text" id="nomBibl" required>
+                    <label for="numISBN">ISBN: </label>
+                    <input type="text" id="numISBN" required>
 
+                    <button type="submit" value="crea">Crea Biblioteca</button>
+                    <button type="submit" value="elimina">Elimina Biblioteca</button>
+                    <button type="submit" value="edita">Edita Biblioteca</button>
 
                 </form>
+                <div id="llistaBibl">
+
+                    <h3>Llista de biblioteques</h3>
+                    
+                </div>
 
             </section>
 
