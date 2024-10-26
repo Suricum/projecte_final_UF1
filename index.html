@@ -32,8 +32,6 @@
 
                     <label for="nomBibl">Nom Biblioteca: </label>
                     <input type="text" id="nomBibl" required>
-                    <label for="numISBN">ISBN: </label>
-                    <input type="text" id="numISBN" required>
 
                     <button type="submit" value="crea">Crea Biblioteca</button>
                     <button type="submit" value="elimina">Elimina Biblioteca</button>
@@ -43,7 +41,7 @@
                 <div id="llistaBibl">
 
                     <h3>Llista de biblioteques</h3>
-                    
+
                 </div>
 
             </section>
@@ -51,11 +49,32 @@
             <section id="llibres">
 
                 <h2>Gestio de llibres</h2>
-                <form action="">
+                <form action="index.php" method="post">
 
+                    <label for="titol">Titol llibre: </label>
+                    <input type="text" id="titol" required>
 
+                    <label for="autor">Autor: </label>
+                    <input type="text" id="autor" required>
+
+                    <label for="numISBN">ISBN</label>
+                    <input type="text" id="numISBN" required>
+
+                    <button type="submit" value="Registra">Registra llibre</button>
+                    <button type="submit" value="Elimina">Elimina llibre</button>
+                    <button type="submit" value="Edita">Edita llibre</button>
 
                 </form>
+
+                <form action="assignaLlibre.php">
+                    <h3>Assiga llibre a una biblioteca</h3>
+                </form>
+
+                <div id="llistaLlibr">
+
+                    <h3>Llista de llibres</h3>
+                    
+                </div>
 
             </section>
 
