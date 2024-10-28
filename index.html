@@ -1,105 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Practica Final - Rafa, Ainhoa</title>
-    </head>
-
-    <body>
-
-        <header>
-
-            <h1>Gestio de biblioteques i llibres</h1>
-            <nav>
-
-                <ul>
-                    <li><a href="#biblioteques">Biblioteca</a></li>
-                    <li><a href="#llibres">Llibres</a></li>
-                    <li><a href="#cercaLlibres">Cerca llibres</a></li>
-                </ul>
-
-            </nav>
-
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Final - Rafa & Ainhoa</title>
+</head>
+<body>
+    <header>
+        <h1>Gestio de biblioteques i llibres</h1>
+        <nav>
+            <ul>
+                <li><a href="#biblioteques">Biblioteca</a></li>
+                <li><a href="#llibres">Llibres</a></li>
+                <li><a href="#cercaLlibres">Cerca llibres</a></li>
+            </ul>
+        </nav>
+    </header>
         <main>
-
             <section id="biblioteques">
-
                 <h2>Gestio de biblioteques</h2>
                 <form action="index.php" method="post">
+                    <input type="hidden" name="action" value="add_library">
+                    <label for="nom">Nom: </label>
+                    <input type="text" id="nom" required>
+                    
+                    <label for="direccio">Direcció: </label>
+                    <input type="text" id="direccio" required>
 
-                    <label for="nomBibl">Nom Biblioteca: </label>
-                    <input type="text" id="nomBibl" required>
-
-                    <button type="submit" value="crea">Crea Biblioteca</button>
-                    <button type="submit" value="elimina">Elimina Biblioteca</button>
-                    <button type="submit" value="edita">Edita Biblioteca</button>
-
+                    <label for="telefon">Telefon: </label>
+                    <input type="text" id="telefon" required>
+                    
+                    <button type="submit" value="crea">Crea</button>
+                    <button type="submit" value="elimina">Elimina</button>
+                    <button type="submit" value="edita">Edita</button>
                 </form>
                 <div id="llistaBibl">
-
                     <h3>Llista de biblioteques</h3>
-
                 </div>
 
+
             </section>
-
             <section id="llibres">
-
                 <h2>Gestio de llibres</h2>
                 <form action="index.php" method="post">
-
-                    <label for="titol">Titol llibre: </label>
+                    <input type="hidden" name="action" value="add_book">
+                    <label for="titol">Titol: </label>
                     <input type="text" id="titol" required>
 
                     <label for="autor">Autor: </label>
                     <input type="text" id="autor" required>
 
-                    <label for="numISBN">ISBN</label>
+                    <label for="isbn">ISBN: </label>
                     <input type="text" id="numISBN" required>
+
+                    <label for="idioma">Idioma: </label>
+                    <input type="text" id="idioma" required>
+
+                    <label for="id_biblioteca">Id: </label>
+                    <input type="text" id="id_biblioteca" required>
 
                     <button type="submit" value="Registra">Registra llibre</button>
                     <button type="submit" value="Elimina">Elimina llibre</button>
                     <button type="submit" value="Edita">Edita llibre</button>
-
                 </form>
 
-                <form action="assignaLlibreABiblioteca.php">
-
-                    <h3>Assiga llibre a una biblioteca</h3>
-                    <label for="nom">Nom del llibre: </label>
-                    <input type="text" id="nom" required>
-
-                    <label for="numISBN">ISBN del llibre: </label>
-                    <input type="text" id="numISBN" required>
-                    
-                    <label for="biblioteca">A quina biblioteca vols assignar: </label>
-                    <input type="text" id="biblioteca" required>
-
-                    <button type="submit" value="assigna">Assignar</button>
-
+                
+                
+                <h3>Assiga llibre a una biblioteca</h3>
+                <form action="index.php" method="post">
+                    <input type="hidden" name="action" value="assign_book_to_library">
+                    <label>Libro ID: <input type="number" name="id" required></label><br>
+                    <label>Biblioteca ID: <input type="number" name="id_biblioteca" required></label><br>
+                    <button type="submit">Asignar Libro a Biblioteca</button>
                 </form>
 
-                <div id="llistaLlibr">
+                <h2>Buscar Libros</h2>
+                <form action="index.php" method="get">
+                    <input type="hidden" name="action" value="search_books">
+                    <label>Buscar por título o autor: <input type="text" name="query"></label>
+                    <button type="submit">Buscar</button>
+                </form>
 
-                    <h3>Llista de llibres</h3>
-                    
-                </div>
+                <h2>Lista de Bibliotecas</h2>
+                <form action="index.php" method="post">
+                    <input type="hidden" name="action" value="show_libraries">
+                    <button type="submit">Mostrar Bibliotecas</button>
+                </form>
 
-            </section>
-
-            <section id="#cercaLlibres">
-
-                <h2>Cerca llibres</h2>
-                <form action="">
-
-                    <label for="titolLlibrAut">Titol/autor: </label>
-                    <input type="text" id="titolLlibrAut" required>
-
-                    <button type="submit">Cerca</button>
-                    
+                <h2>Lista de Libros</h2>
+                <form action="index.php" method="post">
+                    <input type="hidden" name="action" value="show_books">
+                    <button type="submit">Mostrar Libros</button>
                 </form>
 
                 <div id="resultat">
