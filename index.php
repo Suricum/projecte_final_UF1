@@ -11,7 +11,8 @@ if ($conn->connect_error) {
     die("Connexió trencada: " . $conn->connect_error);
 }
 
-function add_library($conn) {
+function add_library($conn)
+{
     $nom = $_POST['nom'];
     $direccio = $_POST['direccio'];
     $telefon = $_POST['telefon'];
@@ -19,7 +20,8 @@ function add_library($conn) {
     echo $conn->query($sql) ? "Biblioteca afegida." : "Error: " . $conn->error;
 }
 
-function add_book($conn) {
+function add_book($conn)
+{
     $titol = $_POST['titol'];
     $autor = $_POST['autor'];
     $isbn = $_POST['isbn'];
@@ -28,16 +30,18 @@ function add_book($conn) {
     echo $conn->query($sql) ? "Llibre afegit." : "Error: " . $conn->error;
 }
 
-function assign_book_to_library($conn) {
+function assign_book_to_library($conn)
+{
     $id = $_POST['id'];
     $id_biblioteca = $_POST['id_biblioteca'];
     $sql = "UPDATE llibre SET id_biblioteca = $id_biblioteca WHERE id = $id";
-    echo $conn->query($sql) ? "Llibre asignat" . "Error: " . $conn->error;
+    echo $conn->query($sql) ? "Llibre asignat" : "Error: " . $conn->error;
 }
 
-function show_libraries($conn) {
+function show_libraries($conn)
+{
     $result = $conn->query("SELECT * FROM biblioteca");
-    echo "<h3>Biblioteques:</h3><ul>"; 
+    echo "<h3>Biblioteques:</h3><ul>";
     while ($row = $result->fetch_assoc()) {
         echo "<li>{$row['id']} - {$row['nom']}, {$row['direccio']}, {$row['telefon']}</li>";
     }
