@@ -14,3 +14,18 @@ body {
     line-height: 1.6;
 
 }
+
+header {
+
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+header nav ul{
+
+    list-style: none;
+    padding: 0px;
+
+}
