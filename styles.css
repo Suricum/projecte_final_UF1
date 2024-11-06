@@ -88,3 +88,19 @@ button {
     cursor: pointer;
 
 }
+
+button:hover {
+
+    background-color: grey;
+
+}
+
+footer {
+
+    text-align: center;
+    padding: 16px;
+    background-color: black;
+    color: white;
+    margin-top: 32px;
+
+}
