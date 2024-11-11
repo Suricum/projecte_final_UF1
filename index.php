@@ -14,8 +14,8 @@ if ($conn->connect_error) {
 function add_library($conn)
 {
     $nom = $conn->real_escape_string($_POST['nom']);
-    $direccio $conn->real_escape_string($_POST['direccio']);
-    $telefon $conn->real_escape_string($_POST['telefon']);
+    $direccio = $conn->real_escape_string($_POST['direccio']);
+    $telefon = $conn->real_escape_string($_POST['telefon']);
     $sql = "INSERT INTO biblioteca (nom, direccio, telefon) VALUES ('$nom', '$direccio', '$telefon')";
     echo $conn->query($sql) ? "Biblioteca afegida." : "Error: " . $conn->error;
 }
@@ -24,17 +24,17 @@ function edit_library($conn)
 {
     $id = (int) $_POST['id'];
     $nom = $conn->real_escape_string($_POST['nom']);
-    $direccio $conn->real_escape_string($_POST['direccio']);
-    $telefon $conn->real_escape_string($_POST['telefon']);
-    $sql = "UPDATE biblioteca SET nom = '$nom', direccio = '$direccio', telefon = '$telefon' WHERE id = $id"; 
+    $direccio = $conn->real_escape_string($_POST['direccio']);
+    $telefon = $conn->real_escape_string($_POST['telefon']);
+    $sql = "UPDATE biblioteca SET nom = '$nom', direccio = '$direccio', telefon = '$telefon' WHERE id = $id";
     echo $conn->query($sql) ? "Biblioteca editada." : "Error: " . $conn->error;
 }
 
 function delete_library($conn)
 {
     $id = (int) $_POST['id'];
-    $sql = "DELETE FROM biblioteca WHERE id = $id"; 
-    echo $conn->query($sql) ? "Biblioteca eliminada." : "Error: " $conn->error; 
+    $sql = "DELETE FROM biblioteca WHERE id = $id";
+    echo $conn->query($sql) ? "Biblioteca eliminada." : "Error: " . $conn->error;
 }
 
 function add_book($conn)
@@ -46,7 +46,7 @@ function add_book($conn)
 
     $sql = "INSERT INTO llibre (titol, autor, isbn, idioma) VALUES ('$titol', '$autor', '$isbn', '$idioma')";
     echo $conn->query($sql) ? "Llibre afegit." : "Error; " . $conn->error;
-    
+}
 function edit_book($conn)
 {
     $id = (int) $POST['id'];
@@ -56,16 +56,16 @@ function edit_book($conn)
     $idioma = $conn->real_escape_string($_POST['idioma']);
 
     $sql = "UPDATE llibre SET titol = '$titol', autor = '$autor', isbn = '$isbn', idioma = '$idioma' WHERE id = $id";
-    echo $conn->query($sql) ? "Libro editado." : "Error: " . $conn->error;
+    echo $conn->query($sql) ? "Llibre editat." : "Error: " . $conn->error;
 }
 
 function delete_book($conn)
 {
     $id = (int) $_POST['id'];
     $sql = "DELETE FROM llibre WHERE id = $id";
-    echo $conn->query($sql) ? "Libro eliminado." : "Error: " . $conn->error;
+    echo $conn->query($sql) ? "Llibre eliminat." : "Error: " . $conn->error;
 }
-        
+
 function assign_book_to_library($conn)
 {
     $id = $_POST['id'];
@@ -94,7 +94,7 @@ function show_books($conn)
     echo "</ul>";
 }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
     switch ($action) {
         case 'add_library':
@@ -125,7 +125,7 @@ function show_books($conn)
             show_books($conn);
             break;
         default:
-            echo "Acción no válida.";
+            echo "Acció no válida.";
     }
 }
 
