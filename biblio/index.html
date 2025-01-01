@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Gestió de Biblioteques i Llibres</title>
+</head>
+<body>
+    <header>
+        <h1>Gestió de Biblioteques i Llibres</h1>
+        <nav>
+            <ul>
+                <li><a href="#biblioteques">Biblioteques</a></li>
+                <li><a href="#llibres">Llibres</a></li>
+                <li><a href="#cerca">Cerca</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Gestión de bibliotecas -->
+        <section id="biblioteques">
+            <h2>Gestió de Biblioteques</h2>
+            <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="add_library">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="direccio">Direcció:</label>
+                <input type="text" id="direccio" name="direccio" required>
+                <label for="telefon">Telèfon:</label>
+                <input type="text" id="telefon" name="telefon" required>
+                <button type="submit">Crea</button>
+                <button type="submit" name="action" value="edit_library">Edita</button>
+                <button type="submit" name="action" value="delete_library">Elimina</button>
+            </form>
+        </section>
+
+        <!-- Gestión de libros -->
+        <section id="llibres">
+            <h2>Gestió de Llibres</h2>
+            <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="add_book">
+                <label for="titol">Títol:</label>
+                <input type="text" id="titol" name="titol" required>
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" name="isbn" required>
+                <label for="idioma">Idioma:</label>
+                <input type="text" id="idioma" name="idioma" required>
+                <button type="submit">Registra</button>
+                <button type="submit" name="action" value="edit_book">Edita</button>
+                <button type="submit" name="action" value="delete_book">Elimina</button>
+            </form>
+
+            <h3>Assigna Llibre a una Biblioteca</h3>
+            <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="assign_book_to_library">
+                <label for="id_llibre">ID del Llibre:</label>
+                <input type="number" id="id_llibre" name="id" required>
+                <label for="id_biblioteca">ID de la Biblioteca:</label>
+                <input type="number" id="id_biblioteca" name="id_biblioteca" required>
+                <button type="submit">Assignar</button>
+            </form>
+        </section>
+
+        <!-- Búsqueda de libros -->
+        <section id="cerca">
+            <h2>Cerca Llibres</h2>
+            <form action="index.php" method="GET">
+                <input type="hidden" name="action" value="search_books">
+                <label for="query">Buscar per Títol o Autor:</label>
+                <input type="text" id="query" name="query">
+                <button type="submit">Cerca</button>
+            </form>
+        </section>
+
+        <!-- Botones de visualización -->
+        <section id="visualitzacio">
+            <h2>Visualització</h2>
+            <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="show_libraries">
+                <button type="submit">Mostrar Biblioteques</button>
+            </form>
+            <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="show_books">
+                <button type="submit">Mostrar Llibres</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Fet per Ainhoa & Rafa</p>
+    </footer>
+</body>
+</html>

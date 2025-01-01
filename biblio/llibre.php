@@ -1,6 +1,6 @@
 
 <?php
-require_once 'db.php';
+require 'creaBDD.php';
 
 // Función para agregar un libro
 function add_book($conn, $titol, $autor, $isbn, $idioma)

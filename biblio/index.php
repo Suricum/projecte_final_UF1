@@ -1,7 +1,7 @@
 
 <?php
-require_once 'biblioteca.php';
-require_once 'llibre.php';
+require 'biblioteca.php';
+require 'llibre.php';
 
 // Manejo de acciones según la solicitud
 $action = $_REQUEST['action'] ?? '';
@@ -32,31 +32,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
     }
 }
-?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Bibliotecas y Libros</title>
-</head>
-<body>
-    <h1>Gestión de Bibliotecas y Libros</h1>
-
-    <!-- Formulario para bibliotecas -->
-    <section>
-        <h2>Bibliotecas</h2>
-        <form action="index.php" method="POST">
-            <input type="hidden" name="action" value="add_library">
-            <input type="text" name="nom" placeholder="Nombre" required>
-            <input type="text" name="direccio" placeholder="Dirección" required>
-            <input type="text" name="telefon" placeholder="Teléfono" required>
-            <button type="submit">Agregar Biblioteca</button>
-        </form>
-    </section>
-
-    <!-- Más secciones aquí -->
-    <p><?php echo $response; ?></p>
-</body>
-</html>

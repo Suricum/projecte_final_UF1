@@ -1,6 +1,6 @@
 
 <?php
-require_once 'db.php';
+require 'creaBDD.php';
 
 // Función para agregar una biblioteca
 function add_library($conn, $nom, $direccio, $telefon)
